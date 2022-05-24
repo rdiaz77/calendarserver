@@ -25,6 +25,5 @@ GamesSchedule_Snacks.init({
         timestamps: false
     })
     
-
 // EXPORT
 module.exports = GamesSchedule_Snacks
