@@ -1,7 +1,4 @@
-require('dotenv').config()
-console.log(process.env)
-
-
+require('dotenv').config();
 const express = require('express');
 const server = express();
 const { Sequelize } = require('sequelize');
@@ -27,7 +24,7 @@ const sequelize = new Sequelize(process.env.DATABASE_URL, {
 
   try {
     sequelize.authenticate();
-    console.log('Connection has been established successfully with the DB.');
+    console.log('Connection has been established successfully with the heroku DB.');
   } catch (error) {
     console.error('Unable to connect to the database:', error);
   }
