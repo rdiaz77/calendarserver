@@ -3,33 +3,52 @@ const { Sequelize, DataTypes,  Model } = require('sequelize')
 const sequelize = new Sequelize(process.env.PG_URI)
 
 // MODEL
-class GamesSchedule extends Model{}
+class Users extends Model{}
 
-GamesSchedule.init({
-    game_schedule_id: { 
+Users.init({
+    user_id: { 
         type: DataTypes.SMALLINT, 
         autoIncrement: true,
         primaryKey: true,   
         allowNull: false
     },
-    hteam: { 
-        type: DataTypes.SMALLINT, 
+    first_name: { 
+        type: DataTypes.CHAR, 
         allowNull: false 
     },
-    gteam: { 
-        type: DataTypes.SMALLINT, 
+    last_name: { 
+        type: DataTypes.CHAR, 
         allowNull: false 
     },
-    schedule_id: { 
+    email: { 
+        type: DataTypes.CHAR,
+        allowNull: false
+    },
+    dob: { 
+        type: DataTypes.DATE,
+        allowNull: false
+    },
+    username: { 
+        type: DataTypes.CHAR,
+        allowNull: false
+    },
+    password: { 
+        type: DataTypes.CHAR,
+        allowNull: false
+    },
+    team_id: { 
+        type: DataTypes.SMALLINT,
+    },
+    player_id: { 
         type: DataTypes.SMALLINT,
     },
     }, {
         sequelize,                           
-        modelName: 'GamesSchedule',
-        tableName: 'GamesSchedule',
+        modelName: 'Users',
+        tableName: 'Users',
         timestamps: false
     })
     
 
 // EXPORT
-module.exports = GamesSchedule
+module.exports = Users
