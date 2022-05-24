@@ -1,15 +1,21 @@
 const express = require('express');
 const server = express();
+const { Sequelize } = require('sequelize');
 const PORT = 3000;
 
 server.get('/', (req,res)=> res.send('INDEX') );
 
 
-// const sequelize = new Sequelize('database', 'username', 'password', {
-//     host: 'localhost',
-//     dialect: /* one of 'mysql' | 'mariadb' | 'postgres' | 'mssql' */
-//   });
+const sequelize = new Sequelize('SportCalendar', 'postgres', 'Asturias171#', {
+    host: 'localhost',
+    dialect:  'postgres' 
+  });
+  try {
+    sequelize.authenticate();
+    console.log('Connection has been established successfully with the DB.');
+  } catch (error) {
+    console.error('Unable to connect to the database:', error);
+  }
 
 
-
-server.listen(3000, console.log(`server started on ${PORT}`))
+server.listen(PORT, console.log(`server started on ${PORT}`))
