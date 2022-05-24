@@ -7,7 +7,8 @@ class GamesSchedule extends Model{}
 
 GamesSchedule.init({
     game_schedule_id: { 
-        type: DataTypes.SMALLINT, 
+        type: DataTypes.SMALLINT,
+        autoIncrement: true, 
         primaryKey: true,   
         allowNull: false
     },
