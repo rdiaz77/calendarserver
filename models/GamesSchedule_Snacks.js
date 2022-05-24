@@ -8,7 +8,8 @@ class GamesSchedule_Snacks extends Model{}
 GamesSchedule_Snacks.init({
     gameschedulesnacks_id: { 
         type: DataTypes.SMALLINT, 
-        primaryKey: true,   
+        primaryKey: true, 
+        autoIncrement: true,  
         allowNull: false
     },
     player_snack_id: { 
